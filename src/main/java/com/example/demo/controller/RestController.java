@@ -52,6 +52,7 @@ public class RestController {
 			mobileUsage.setBillingMonth(entity.getBillingMonth());
 			mobileUsage.setCustName(entity.getCustName());
 			mobileUsage.setDataUsage(entity.getDataUsage());
+			mobileUsage.setId(entity.getId());
 			mobileUsageList.add(mobileUsage);
 		}
 
@@ -66,7 +67,8 @@ public class RestController {
 		MobileUsageEntity mobileUsageEntity = new MobileUsageEntity();
 		mobileUsageEntity.setBillingMonth(mobileUsage.getBillingMonth());
 		mobileUsageEntity.setCustName(mobileUsage.getCustName());
-		mobileUsageEntity.setDataUsage(mobileUsage.getDataUsage());;
+		mobileUsageEntity.setDataUsage(mobileUsage.getDataUsage());
+		mobileUsageEntity.setId(mobileUsage.getId());
 		mobileUsageRepository.save(mobileUsageEntity);
 		return new ResponseEntity<>(mobileUsage, HttpStatus.CREATED);
 	}

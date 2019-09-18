@@ -2,13 +2,15 @@ package com.example.demo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="mobileusage")
+@Table(name = "mobileusage")
 public class MobileUsageEntity {
-	
+
 	@Id
 	@Column(name = "id")
 	public int id;
@@ -17,9 +19,10 @@ public class MobileUsageEntity {
 	@Column(name = "datausage")
 	public String dataUsage;
 	@Column(name = "billingmonth")
-	public String billingMonth ;
-	
-	public MobileUsageEntity() {}
+	public String billingMonth;
+
+	public MobileUsageEntity() {
+	}
 
 	public int getId() {
 		return id;
@@ -52,8 +55,5 @@ public class MobileUsageEntity {
 	public void setBillingMonth(String billingMonth) {
 		this.billingMonth = billingMonth;
 	}
-	
-	
-	
-	
+
 }
