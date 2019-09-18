@@ -64,6 +64,7 @@ public class RestController {
 	@PostMapping(value = "/", consumes = "application/json", produces = "application/json")
 	public @ResponseBody ResponseEntity<MobileUsage> createNew(
 			@RequestBody MobileUsage mobileUsage) {
+		System.out.println(mobileUsage.getBillingMonth() + mobileUsage.getCustName()+mobileUsage.getId()+mobileUsage.getDataUsage());
 		MobileUsageEntity mobileUsageEntity = new MobileUsageEntity();
 		mobileUsageEntity.setBillingMonth(mobileUsage.getBillingMonth());
 		mobileUsageEntity.setCustName(mobileUsage.getCustName());
